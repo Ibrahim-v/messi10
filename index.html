@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ليونيل ميسي — السجل الكامل للألقاب والصور</title>
+  <meta name="description" content="سجل تفصيلي لبطولات ليونيل ميسي مع الأندية والمنتخب مع معرض صور لكل كأس حققه."/>
+  <style>
+    :root{
+      --bg:#0b0f17; --panel:#101725; --card:#111827cc; --stroke:#1f2937;
+      --text:#e6eaf3; --muted:#9fb0c6; --brand:#6ee7ff; --brand2:#a78bfa;
+      --ok:#10b981; --warn:#f59e0b;
+    }
+    :root.light{
+      --bg:#f7fafc; --panel:#ffffff; --card:#ffffffcc; --stroke:#e2e8f0;
+      --text:#0f172a; --muted:#475569; --brand:#0066ff; --brand2:#8b5cf6;
+    }
+    *{box-sizing:border-box} html,body{height:100%}
+    body{
+      margin:0; font-family:"Cairo","Noto Kufi Arabic",system-ui,sans-serif;
+      background:
+        radial-gradient(1200px 600px at 100% -10%, #1b2a4a55, transparent 60%),
+        radial-gradient(1000px 600px at -10% 110%, #4b1d7e33, transparent 60%),
+        var(--bg);
+      color:var(--text); line-height:1.7;
+    }
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1200px,92%); margin:auto}
+
+    /* Header */
+    header{position:sticky; top:0; z-index:50; backdrop-filter:blur(10px);
+      background:linear-gradient(180deg,#0b0f17dd,#0b0f1700), var(--card);
+      border-bottom:1px solid var(--stroke)}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0; flex-wrap:wrap}
+    .brand{display:flex; align-items:center; gap:10px}
+    .crest{width:36px; height:36px; border-radius:12px; background:conic-gradient(from 200deg,var(--brand),var(--brand2)); position:relative; box-shadow:0 8px 30px #0006}
+    .crest::after{content:"10"; position:absolute; inset:0; display:grid; place-items:center; font-weight:800; color:#0b0f17}
+    nav ul{display:flex; gap:10px; list-style:none; padding:0; margin:0; flex-wrap:wrap}
+    nav a{padding:6px 10px; border-radius:10px}
+    nav a:hover{background:#ffffff12}
+    .btn{padding:8px 12px; border-radius:12px; background:#ffffff12; border:1px solid var(--stroke); cursor:pointer}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2)); color:#0b0f17; border:none; font-weight:800}
+
+    /* Hero */
+    .hero{padding:34px 0; display:grid; gap:24px; grid-template-columns:1.1fr .9fr}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    .hero-card{background:var(--card); border:1px solid var(--stroke); border-radius:20px; padding:18px}
+    .title{font-size:clamp(24px,3vw,38px); font-weight:900; margin:6px 0 10px}
+    .subtitle{color:var(--muted); font-size:15px; max-width:70ch}
+    .badges{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px}
+    .badge{background:#ffffff12; padding:6px 10px; border-radius:999px; font-size:12px}
+    .hero-stat{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px}
+    .hero-stat .s{background:#ffffff12; border:1px solid var(--stroke); border-radius:14px; padding:12px; text-align:center}
+    .hero-stat .k{font-weight:900; font-size:18px}
+    .hero-figure{min-height:260px; border-radius:20px; border:1px dashed var(--stroke);
+      background:radial-gradient(600px 220px at 60% -10%, #6ee7ff22, transparent 60%),
+                 radial-gradient(500px 220px at 20% 110%, #a78bfa22, transparent 60%),
+                 #0e1423}
+
+    /* Sections */
+    section{scroll-margin-top:80px}
+    h2.section{font-size:clamp(22px,2.6vw,30px); margin:28px 0 12px}
+    .muted{color:var(--muted)}
+
+    /* Filters & Timeline (clubs/NT) */
+    .filters{display:flex; gap:8px; flex-wrap:wrap; margin:16px 0}
+    .chip{padding:8px 12px; border-radius:999px; background:#ffffff12; border:1px solid var(--stroke); cursor:pointer; font-size:13px}
+    .chip.active{background:linear-gradient(135deg,var(--brand),var(--brand2)); color:#0b0f17; border:none; font-weight:800}
+    .timeline{display:grid; gap:12px}
+    .item{display:grid; grid-template-columns:140px 1fr; gap:12px; background:var(--card); border:1px solid var(--stroke); border-radius:16px; overflow:hidden}
+    @media (max-width:720px){.item{grid-template-columns:1fr}}
+    .years{padding:14px; border-inline-end:1px solid var(--stroke); background:linear-gradient(160deg,#0b0f17,#0b0f1700)}
+    .years .y{font-weight:900}
+    .body{padding:14px}
+    .row{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:6px}
+    .logo{width:26px; height:26px; display:grid; place-items:center; border-radius:8px; background:#ffffff12}
+    .team{font-weight:800}
+    .hl{display:flex; gap:6px; flex-wrap:wrap}
+    .pill{font-size:12px; padding:5px 9px; border-radius:999px; background:#ffffff12; border:1px dashed var(--stroke)}
+
+    /* Honours grid (by competition) */
+    .honours{display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .h-card{background:var(--card); border:1px solid var(--stroke); border-radius:16px; padding:14px}
+    .h-card h3{margin:4px 0 6px; font-size:16px}
+    .h-years{font-size:13px; color:var(--muted)}
+
+    /* Stats */
+    .stats{display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+    .stat{background:var(--card); border:1px solid var(--stroke); border-radius:16px; padding:16px; text-align:center}
+    .stat .big{font-weight:900; font-size:26px}
+
+    /* Gallery (one image per trophy-year) */
+    .controls{display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:8px 0 18px}
+    .search{flex:1; min-width:220px; display:flex}
+    .search input{flex:1; padding:10px 12px; border-radius:12px 0 0 12px; border:1px solid var(--stroke); background:var(--panel); color:var(--text)}
+    .search button{padding:10px 12px; margin-right:5px; border-radius:12px 12px 12px 12px; border:1px solid var(--stroke); background:#ffffff12; color:var(--text); cursor:pointer}
+    .gallery{display:grid; gap:10px; grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+    .card{
+      background:var(--card); border:1px solid var(--stroke); border-radius:14px; overflow:hidden; display:flex; flex-direction:column
+    }
+    .thumb{aspect-ratio:4/3; background:#0e1423; display:grid; place-items:center; position:relative}
+    .thumb img{width:100%; height:100%; object-fit:cover; display:block}
+    .ph{
+      width:100%; height:100%;
+      background:
+        radial-gradient(120px 80px at 30% 30%, #6ee7ff22, transparent 60%),
+        radial-gradient(120px 80px at 80% 60%, #a78bfa22, transparent 60%),
+        #0e1423;
+      border-bottom:1px dashed var(--stroke)
+    }
+    .cap{padding:10px 12px}
+    .cap .t{font-weight:800; font-size:14px}
+    .cap .s{font-size:12px; color:var(--muted)}
+    .tagbar{display:flex; gap:6px; flex-wrap:wrap; padding:10px 12px 12px}
+    .tag{font-size:11px; padding:4px 8px; border-radius:999px; border:1px solid var(--stroke); background:#ffffff10}
+    .floating{position:fixed; right:12px; bottom:12px; display:flex; gap:8px}
+    .fab{width:46px; height:46px; border-radius:14px; background:linear-gradient(135deg,var(--brand),var(--brand2)); color:#0b0f17; border:none; font-weight:900; cursor:pointer; box-shadow:0 10px 25px #0006}
+    footer{margin:36px 0 60px; text-align:center; color:var(--muted); font-size:14px}
+    .reveal{opacity:0; transform:translateY(10px); transition:.6s cubic-bezier(.2,.8,.2,1)}
+    .reveal.in{opacity:1; transform:translateY(0)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="crest" aria-hidden="true"></div>
+        <h1>ليونيل ميسي</h1>
+      </div>
+      <nav aria-label="التنقل">
+        <ul>
+          <li><a href="#about">السيرة</a></li>
+          <li><a href="#timeline">الأندية</a></li>
+          <li><a href="#nt">المنتخب</a></li>
+          <li><a href="#honors">الألقاب</a></li>
+          <li><a href="#stats">أرقام</a></li>
+          <li><a href="#gallery">صور الألقاب</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <button id="modeBtn" class="btn" title="تبديل الوضع">الوضع: داكن</button>
+        <a class="btn primary" href="#gallery">انتقل للصور</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="container hero" id="about">
+      <div class="hero-card reveal">
+        <div class="badges"><span class="badge">🐐 GOAT</span><span class="badge">قائد ملهم</span><span class="badge">هداف وصانع</span></div>
+        <h2 class="title">سيرة موجزة</h2>
+        <p class="subtitle">
+          نشأ ميسي في روزاريو، مرّ بفئات نيويلز، وبلغ القمّة مع برشلونة (2004–2021)، ثم خاض تجربة باريس (2021–2023)، ويقود اليوم مشروع إنتر ميامي (منذ 2023).
+          دولياً قاد الأرجنتين لكوبا أمريكا 2021 و2024، الفايناليسيما 2022، وكأس العالم 2022.
+        </p>
+        <div class="hero-stat">
+          <div class="s"><div class="k" data-countto="45">1</div><div class="muted">بطولة جماعية تقريباً</div></div>
+          <div class="s"><div class="k" data-countto="1200">1</div><div class="muted">هدف ومساهَمة</div></div>
+          <div class="s"><div class="k" data-countto="8">1</div><div class="muted">كرات ذهبية</div></div>
+        </div>
+      </div>
+      <div class="hero-figure reveal" aria-hidden="true"><h1 style="margin-right: 29%; margin-top: 26%; font-size: 40px;">Lionel Messi</h1><br><h1 style="margin-right: 45%; margin-top: -8%; font-size: 40px;">10</h1></div>
+      </div>
+    </section>
+
+    <!-- Clubs -->
+    <section class="container" id="timeline">
+      <h2 class="section">المسيرة مع الأندية</h2>
+      <p class="subtitle">اختر نادياً لتصفية المخطط الزمني.</p>
+      <div class="filters" id="filters"></div>
+      <div class="timeline" id="clubTimeline"></div>
+    </section>
+
+    <!-- Argentina -->
+    <section class="container" id="nt">
+      <h2 class="section">المسيرة الدولية — الأرجنتين</h2>
+      <div class="timeline" id="ntTimeline"></div>
+    </section>
+
+    <!-- Honours by competition -->
+    <section class="container" id="honors">
+      <h2 class="section">الألقاب حسب البطولة</h2>
+      <div class="honours" id="honoursGrid"></div>
+    </section>
+
+    <!-- Stats -->
+    <section class="container" id="stats">
+      <h2 class="section">أرقام وحقائق</h2>
+      <div class="stats">
+        <div class="stat reveal"><div class="big" data-countto="8">8</div><div class="muted">Ballon d'Or</div></div>
+        <div class="stat reveal"><div class="big" data-countto="6">6</div><div class="muted">أحذية ذهبية</div></div>
+        <div class="stat reveal"><div class="big" data-countto="4">4</div><div class="muted">دوري أبطال أوروبا</div></div>
+        <div class="stat reveal"><div class="big" data-countto="3">3</div><div class="muted">كأس عالم للأندية</div></div>
+      </div>
+    </section>
+
+    <!-- Gallery (one photo per trophy-year) -->
+    <section class="container" id="gallery">
+      <h2 class="section">صور كل كأس حقّقه</h2>
+      <div class="controls">
+        <div class="search">
+          <input id="q" type="search" placeholder="مثال: 2015، دوري أبطال أوروبا، برشلونة…">
+          <button id="clear">مسح</button>
+        </div>
+        <button id="sortBtn" class="btn">ترتيب: الأحدث ⬇︎</button>
+        <button id="groupBtn" class="btn">تجميع حسب: لا شيء</button>
+      </div>
+      <div class="gallery" id="galleryGrid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>© 2025 — أرشيف تكريمي لمسيرة ليونيل ميسي</footer>
+
+  <!-- Floating -->
+  <div class="floating">
+    <button id="toTop" class="fab" title="العودة للأعلى">↑</button>
+    <button id="modeFab" class="fab" title="الوضع">☼</button>
+  </div>
+
+  <script>
+  /* =========================
+     بيانات منظمة — قابلة للتوسّع
+     لاحقاً ضعوا روابط الصور في imageUrl لكل لقب-سنة
+     ========================= */
+
+  // الأندية لقسم التصفية
+  const clubs = [
+    { id:'all',  name:'الكل' },
+    { id:'newells', name:'نيويلز أولد بويز (فئات)' },
+    { id:'barca', name:'برشلونة' },
+    { id:'psg', name:'باريس سان جيرمان' },
+    { id:'miami', name:'إنتر ميامي' },
+  ];
+
+  // مخطط زمني للأندية
+  const clubTimeline = [
+    { from:1995, to:2000, team:'نيويلز — فئات سنية', tag:'🇦🇷 الأرجنتين', id:'newells',
+      highlights:['بواكير الموهبة','أرقام لافتة في الناشئين'] },
+    { from:2004, to:2021, team:'برشلونة', tag:'🇪🇸 إسبانيا', id:'barca',
+      highlights:['10× ليغا','4× دوري أبطال','سداسية 2009 ورباعية 2015'] },
+    { from:2021, to:2023, team:'باريس سان جيرمان', tag:'🇫🇷 فرنسا', id:'psg',
+      highlights:['2× دوري فرنسي','1× السوبر الفرنسي'] },
+    { from:2023, to:'الآن', team:'إنتر ميامي', tag:'🇺🇸 الولايات المتحدة', id:'miami',
+      highlights:['Leagues Cup 2023','بناء مشروع تنافسي'] },
+  ];
+
+  // مخطط زمني للمنتخب
+  const ntTimeline = [
+    { from:2005, to:2016, team:'الأرجنتين — البدايات', tag:'🇦🇷 منتخب', id:'nt',
+      highlights:['نهائيات متعدّدة دون تتويج'] },
+    { from:2019, to:2022, team:'الأرجنتين — حقبة التتويج', tag:'🇦🇷 منتخب', id:'nt',
+      highlights:['كوبا أمريكا 2021','فايناليسيما 2022','كأس العالم 2022'] },
+    { from:2023, to:2024, team:'الأرجنتين — الاستمرارية', tag:'🇦🇷 منتخب', id:'nt',
+      highlights:['كوبا أمريكا 2024'] },
+  ];
+
+  // الألقاب حسب البطولة (سنوات)
+  const honoursByCompetition = [
+    { comp:'دوري أبطال أوروبا', org:'UEFA', team:'برشلونة', years:[2006,2009,2011,2015] },
+    { comp:'الدوري الإسباني (الليغا)', team:'برشلونة', years:[2005,2006,2009,2010,2011,2013,2015,2016,2018,2019] },
+    { comp:'كأس ملك إسبانيا', team:'برشلونة', years:[2009,2012,2015,2016,2017,2018,2021] },
+    { comp:'السوبر الإسباني', team:'برشلونة', years:[2005,2006,2009,2010,2011,2013,2016,2018] },
+    { comp:'السوبر الأوروبي', org:'UEFA', team:'برشلونة', years:[2009,2011,2015] },
+    { comp:'كأس العالم للأندية', org:'FIFA', team:'برشلونة', years:[2009,2011,2015] },
+    { comp:'الدوري الفرنسي', team:'باريس سان جيرمان', years:[2022,2023] },
+    { comp:'كأس الأبطال الفرنسي', team:'باريس سان جيرمان', years:[2022] },
+    { comp:'Leagues Cup', team:'إنتر ميامي', years:[2023] },
+    { comp:'كأس العالم', team:'الأرجنتين', years:[2022] },
+    { comp:'كوبا أمريكا', team:'الأرجنتين', years:[2021,2024] },
+    { comp:'فايناليسيما (كأس أبطال القارات)', team:'الأرجنتين', years:[2022] },
+    { comp:'الأولمبياد (ذهب)', team:'الأرجنتين الأولمبي', years:[2008] },
+    { comp:'كأس العالم تحت 20', team:'الأرجنتين U20', years:[2005] },
+  ];
+
+  /* ======= «كل كأس» كوحدات منفصلة (سنة × بطولة) لعرض صورة لكل لقب =======
+     لكل عنصر ضعوا:
+     - imageUrl: رابط صورة ميسي وهو يرفع الكأس في تلك السنة
+     - alt: نص بديل دقيق
+     ملاحظة: تركت أمثلة فارغة/وهمية لتبديلها وفق تفضيلكم.
+  */
+  const trophyUnits = [
+    // أمثلة دولية
+    { year:2022, comp:'كأس العالم', team:'الأرجنتين', place:'قطر', imageUrl:'', alt:'ميسي يرفع كأس العالم 2022' },
+    { year:2021, comp:'كوبا أمريكا', team:'الأرجنتين', place:'البرازيل', imageUrl:'', alt:'ميسي يحتفل بكوبا أمريكا 2021' },
+    { year:2024, comp:'كوبا أمريكا', team:'الأرجنتين', place:'الولايات المتحدة', imageUrl:'', alt:'ميسي يتوّج بكوبا أمريكا 2024' },
+    { year:2022, comp:'فايناليسيما', team:'الأرجنتين', place:'ويمبلي', imageUrl:'', alt:'ميسي يرفع كأس الفايناليسيما 2022' },
+    { year:2008, comp:'ذهب أولمبي', team:'الأرجنتين الأولمبي', place:'بكين', imageUrl:'', alt:'ميسي بالميدالية الذهبية 2008' },
+    { year:2005, comp:'كأس العالم U20', team:'الأرجنتين U20', place:'هولندا', imageUrl:'', alt:'ميسي بكأس العالم للشباب 2005' },
+
+    // أمثلة أندية — برشلونة (اكتمل حسب الحاجة بإضافة بقية السنوات)
+    { year:2006, comp:'دوري أبطال أوروبا', team:'برشلونة', place:'باريس', imageUrl:'', alt:'ميسي مع دوري الأبطال 2006' },
+    { year:2009, comp:'دوري أبطال أوروبا', team:'برشلونة', place:'روما', imageUrl:'', alt:'ميسي يرفع دوري الأبطال 2009' },
+    { year:2011, comp:'دوري أبطال أوروبا', team:'برشلونة', place:'ويمبلي', imageUrl:'', alt:'ميسي بدوري الأبطال 2011' },
+    { year:2015, comp:'دوري أبطال أوروبا', team:'برشلونة', place:'برلين', imageUrl:'', alt:'ميسي بدوري الأبطال 2015' },
+
+    { year:2009, comp:'كأس العالم للأندية', team:'برشلونة', place:'أبوظبي', imageUrl:'', alt:'ميسي بكأس العالم للأندية 2009' },
+    { year:2011, comp:'كأس العالم للأندية', team:'برشلونة', place:'اليابان', imageUrl:'', alt:'ميسي بكأس العالم للأندية 2011' },
+    { year:2015, comp:'كأس العالم للأندية', team:'برشلونة', place:'اليابان', imageUrl:'', alt:'ميسي بكأس العالم للأندية 2015' },
+
+    // الليغا (ضعوا صورة ممثلة لكل عام ترغبون بعرضه)
+    { year:2005, comp:'الليغا', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يتوّج بالليغا 2004–05' },
+    { year:2006, comp:'الليغا', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يتوّج بالليغا 2005–06' },
+    { year:2009, comp:'الليغا', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يتوّج بالليغا 2008–09' },
+    { year:2010, comp:'الليغا', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يتوّج بالليغا 2009–10' },
+    { year:2011, comp:'الليغا', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يتوّج بالليغا 2010–11' },
+    { year:2013, comp:'الليغا', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يتوّج بالليغا 2012–13' },
+    { year:2015, comp:'الليغا', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يتوّج بالليغا 2014–15' },
+    { year:2016, comp:'الليغا', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يتوّج بالليغا 2015–16' },
+    { year:2018, comp:'الليغا', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يتوّج بالليغا 2017–18' },
+    { year:2019, comp:'الليغا', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يتوّج بالليغا 2018–19' },
+
+    // كأس الملك (نماذج، ويمكن استكمال بقية السنوات)
+    { year:2009, comp:'كأس الملك', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يرفع كأس الملك 2008–09' },
+    { year:2012, comp:'كأس الملك', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يرفع كأس الملك 2011–12' },
+    { year:2015, comp:'كأس الملك', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يرفع كأس الملك 2014–15' },
+    { year:2016, comp:'كأس الملك', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يرفع كأس الملك 2015–16' },
+    { year:2017, comp:'كأس الملك', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يرفع كأس الملك 2016–17' },
+    { year:2018, comp:'كأس الملك', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يرفع كأس الملك 2017–18' },
+    { year:2021, comp:'كأس الملك', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي يرفع كأس الملك 2020–21' },
+
+    // السوبر الإسباني (أمثلة)
+    { year:2005, comp:'السوبر الإسباني', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي بالسوبر الإسباني 2005' },
+    { year:2006, comp:'السوبر الإسباني', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي بالسوبر الإسباني 2006' },
+    { year:2009, comp:'السوبر الإسباني', team:'برشلونة', place:'إسبانيا', imageUrl:'', alt:'ميسي بالسوبر الإسباني 2009' },
+
+    // السوبر الأوروبي
+    { year:2009, comp:'السوبر الأوروبي', team:'برشلونة', place:'UEFA', imageUrl:'', alt:'ميسي بالسوبر الأوروبي 2009' },
+    { year:2011, comp:'السوبر الأوروبي', team:'برشلونة', place:'UEFA', imageUrl:'', alt:'ميسي بالسوبر الأوروبي 2011' },
+    { year:2015, comp:'السوبر الأوروبي', team:'برشلونة', place:'UEFA', imageUrl:'', alt:'ميسي بالسوبر الأوروبي 2015' },
+
+    // باريس سان جيرمان
+    { year:2022, comp:'الدوري الفرنسي', team:'باريس سان جيرمان', place:'فرنسا', imageUrl:'', alt:'ميسي يتوّج بالدوري الفرنسي 2021–22' },
+    { year:2023, comp:'الدوري الفرنسي', team:'باريس سان جيرمان', place:'فرنسا', imageUrl:'', alt:'ميسي يتوّج بالدوري الفرنسي 2022–23' },
+    { year:2022, comp:'كأس الأبطال الفرنسي', team:'باريس سان جيرمان', place:'فرنسا', imageUrl:'', alt:'ميسي يرفع كأس الأبطال 2022' },
+
+    // إنتر ميامي
+    { year:2023, comp:'Leagues Cup', team:'إنتر ميامي', place:'الولايات المتحدة', imageUrl:'', alt:'ميسي يرفع كأس Leagues Cup 2023' },
+  ];
+
+  /* ======= بناء واجهة الصفحة ======= */
+
+  // إنشاء مرشحات الأندية
+  const $filters = document.getElementById('filters');
+  let activeFilter = 'all';
+  clubs.forEach(c=>{
+    const chip = document.createElement('button');
+    chip.className='chip'+(c.id==='all'?' active':'');
+    chip.textContent=c.name; chip.dataset.id=c.id;
+    chip.addEventListener('click',()=>{
+      activeFilter=c.id; updateClubTimeline();
+      [...$filters.children].forEach(el=>el.classList.toggle('active', el===chip));
+    });
+    $filters.appendChild(chip);
+  });
+
+  const $clubTimeline = document.getElementById('clubTimeline');
+  const $ntTimeline   = document.getElementById('ntTimeline');
+  const $honoursGrid  = document.getElementById('honoursGrid');
+  const $galleryGrid  = document.getElementById('galleryGrid');
+
+  function createItem({from,to,team,tag,highlights}){
+    const wrap = document.createElement('div'); wrap.className='item reveal';
+    const years = document.createElement('div'); years.className='years';
+    years.innerHTML = `<div class="y">${from} — ${to}</div><div class="muted">${tag||''}</div>`;
+    const body = document.createElement('div'); body.className='body';
+    const row = document.createElement('div'); row.className='row';
+    row.innerHTML = `<div class="logo">🏟️</div><div class="team">${team}</div><span class="pill">محطة مفصلية</span>`;
+    const hl = document.createElement('div'); hl.className='hl';
+    (highlights||[]).forEach(t=>{ const pill=document.createElement('span'); pill.className='pill'; pill.textContent=t; hl.appendChild(pill); });
+    body.appendChild(row); body.appendChild(hl);
+    wrap.appendChild(years); wrap.appendChild(body);
+    return wrap;
+  }
+
+  function updateClubTimeline(){
+    $clubTimeline.innerHTML='';
+    clubTimeline
+      .filter(x=> activeFilter==='all' ? true : x.id===activeFilter)
+      .forEach(x=> $clubTimeline.appendChild(createItem(x)));
+    revealNow();
+  }
+
+  function buildNT(){ ntTimeline.forEach(x=> $ntTimeline.appendChild(createItem(x))); }
+
+  // الألقاب حسب البطولة – شبكة مبسطة
+  function buildHonours(){
+    honoursByCompetition.forEach(h=>{
+      const card = document.createElement('div'); card.className='h-card reveal';
+      const cnt  = h.years.length;
+      card.innerHTML = `
+        <h3>${h.comp} — <span class="muted">${h.team}</span></h3>
+        <div class="h-years">${h.years.sort((a,b)=>a-b).join('، ')}</div>
+        <div class="muted" style="margin-top:6px">${cnt} لقب/ألقاب</div>
+      `;
+      $honoursGrid.appendChild(card);
+    });
+  }
+
+  // المعرض: صورة لكل لقب-سنة
+  let sortDesc = true;
+  let groupMode = 'none'; // none | comp | team | decade
+
+  function renderGallery(list){
+    $galleryGrid.innerHTML='';
+    list.forEach(t=>{
+      const card = document.createElement('article'); card.className='card reveal';
+      const th   = document.createElement('div'); th.className='thumb';
+      if(t.imageUrl){
+        const img = new Image(); img.loading='lazy'; img.decoding='async'; img.alt=t.alt||'لقب';
+        img.src = t.imageUrl; th.appendChild(img);
+      }else{
+        const ph = document.createElement('div'); ph.className='ph'; th.appendChild(ph);
+      }
+      const cap = document.createElement('div'); cap.className='cap';
+      cap.innerHTML = `<div class="t">${t.comp} — ${t.year}</div><div class="s">${t.team}${t.place? ' • '+t.place:''}</div>`;
+      const tags = document.createElement('div'); tags.className='tagbar';
+      [t.comp, t.team, String(t.year)].forEach(v=>{
+        const span=document.createElement('span'); span.className='tag'; span.textContent=v; tags.appendChild(span);
+      });
+      card.appendChild(th); card.appendChild(cap); card.appendChild(tags);
+      $galleryGrid.appendChild(card);
+    });
+    revealNow();
+  }
+
+  function applySortAndFilters(){
+    const q = document.getElementById('q').value.trim().toLowerCase();
+    let arr = [...trophyUnits];
+    if(q){
+      arr = arr.filter(t =>
+        [t.comp, t.team, t.place, t.year, t.alt].filter(Boolean).join(' ').toLowerCase().includes(q)
+      );
+    }
+    arr.sort((a,b)=> sortDesc ? b.year - a.year : a.year - b.year);
+
+    if(groupMode==='none'){ renderGallery(arr); return; }
+
+    // تجميع بصري مبسّط عبر إدراج فواصل
+    const grouped = {};
+    const keyFn = groupMode==='comp' ? (t)=>t.comp : groupMode==='team' ? (t)=>t.team : (t)=> (Math.floor(t.year/10)*10)+'s';
+    arr.forEach(t=>{ const k=keyFn(t); (grouped[k]??=[]).push(t); });
+
+    const orderedKeys = Object.keys(grouped).sort();
+    $galleryGrid.innerHTML='';
+    orderedKeys.forEach(k=>{
+      const sep = document.createElement('div');
+      sep.className='card'; sep.style.borderStyle='dashed'; sep.style.alignItems='flex-start';
+      sep.innerHTML = `<div class="cap"><div class="t">— ${k} —</div><div class="s muted">مجموعة</div></div>`;
+      $galleryGrid.appendChild(sep);
+      grouped[k].forEach(t=>{
+        const card = document.createElement('article'); card.className='card reveal';
+        const th   = document.createElement('div'); th.className='thumb';
+        if(t.imageUrl){ const img = new Image(); img.loading='lazy'; img.decoding='async'; img.alt=t.alt||'لقب'; img.src=t.imageUrl; th.appendChild(img); }
+        else{ const ph=document.createElement('div'); ph.className='ph'; th.appendChild(ph); }
+        const cap = document.createElement('div'); cap.className='cap';
+        cap.innerHTML = `<div class="t">${t.comp} — ${t.year}</div><div class="s">${t.team}${t.place? ' • '+t.place:''}</div>`;
+        const tags = document.createElement('div'); tags.className='tagbar';
+        [t.comp, t.team, String(t.year)].forEach(v=>{ const span=document.createElement('span'); span.className='tag'; span.textContent=v; tags.appendChild(span); });
+        card.appendChild(th); card.appendChild(cap); card.appendChild(tags);
+        $galleryGrid.appendChild(card);
+      });
+    });
+    revealNow();
+  }
+
+  // تهيئة واجهة المعرض
+  document.getElementById('sortBtn').addEventListener('click',()=>{
+    sortDesc = !sortDesc;
+    document.getElementById('sortBtn').textContent = 'ترتيب: ' + (sortDesc ? 'الأحدث ⬇︎' : 'الأقدم ⬆︎');
+    applySortAndFilters();
+  });
+  document.getElementById('groupBtn').addEventListener('click',()=>{
+    groupMode = groupMode==='none' ? 'comp' : groupMode==='comp' ? 'team' : groupMode==='team' ? 'decade' : 'none';
+    const label = groupMode==='none'?'لا شيء':groupMode==='comp'?'البطولة':groupMode==='team'?'النادي/المنتخب':'العِقد';
+    document.getElementById('groupBtn').textContent='تجميع حسب: '+label;
+    applySortAndFilters();
+  });
+  document.getElementById('q').addEventListener('input', applySortAndFilters);
+  document.getElementById('clear').addEventListener('click', ()=>{ document.getElementById('q').value=''; applySortAndFilters(); });
+
+  /* ======= تأثيرات، وضع النهار/الليل، أعلى الصفحة ======= */
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.1});
+  function revealNow(){ document.querySelectorAll('.reveal').forEach(el=> io.observe(el)); }
+  function animateCounters(){
+    document.querySelectorAll('[data-countto]').forEach(el=>{
+      const target = +el.getAttribute('data-countto'); const clean = +String(el.textContent).replace(/\D/g,'')||0;
+      const start = performance.now(), dur = 900;
+      function tick(t){ const p=Math.min(1,(t-start)/dur); const val=Math.floor(clean+(target-clean)*p); el.textContent=val; if(p<1) requestAnimationFrame(tick); }
+      requestAnimationFrame(tick);
+    });
+  }
+  const toTop=document.getElementById('toTop'); toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  const modeBtn=document.getElementById('modeBtn'), modeFab=document.getElementById('modeFab');
+  function toggleMode(){ const light=document.documentElement.classList.toggle('light'); const txt= light?'فاتح':'داكن'; modeBtn.textContent='الوضع: '+txt; }
+  modeBtn.addEventListener('click',toggleMode); modeFab.addEventListener('click',toggleMode);
+
+  /* ======= تشغيل ======= */
+  function buildTimelines(){ updateClubTimeline(); buildNT(); }
+  function buildHonoursAndGallery(){ buildHonours(); applySortAndFilters(); }
+  buildTimelines(); buildHonoursAndGallery(); revealNow(); animateCounters();
+  </script>
+</body>
+</html>
